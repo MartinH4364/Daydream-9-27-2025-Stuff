@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cymmkeeqforvm"]
+[gd_scene load_steps=11 format=3 uid="uid://cymmkeeqforvm"]
 
 [ext_resource type="Texture2D" uid="uid://6loy4brnqboo" path="res://Enming Assets/pixel-art-illustration-mug-coffee-600nw-2395135921-removebg-preview.png" id="1_ec5oe"]
-[ext_resource type="Script" uid="uid://dfmfr8aeygb8m" path="res://scenes/buycoffee.gd" id="2_t4md6"]
+[ext_resource type="Script" path="res://scenes/buycoffee.gd" id="2_t4md6"]
 [ext_resource type="Texture2D" uid="uid://btl3aq02yhjy6" path="res://Enming Assets/book-Photoroom.png" id="3_fpbbi"]
-[ext_resource type="Script" uid="uid://ca1n1iaodoyty" path="res://scenes/boughtbook.gd" id="4_m0qts"]
+[ext_resource type="Script" path="res://scenes/boughtbook.gd" id="4_m0qts"]
 [ext_resource type="Texture2D" uid="uid://da8cb0b2f3xbh" path="res://Enming Assets/mushroom-removebg-preview.png" id="5_ht580"]
 [ext_resource type="Texture2D" uid="uid://dj4cx83eerm0s" path="res://Enming Assets/trophy-removebg-preview.png" id="5_m0qts"]
-[ext_resource type="Script" uid="uid://2l2hg7d8djew" path="res://scenes/buymushroom.gd" id="6_skkvx"]
+[ext_resource type="Script" path="res://scenes/buymushroom.gd" id="6_skkvx"]
+[ext_resource type="FontFile" uid="uid://crft7xjpq21ha" path="res://Morton Assets/fonts/PixelOperator8.ttf" id="8_skkvx"]
+[ext_resource type="Script" uid="uid://dxm0dihwj8wsj" path="res://scripts/ticket_display.gd" id="9_eo1la"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cimqq"]
 bg_color = Color(1, 0.8784314, 1, 0.827451)
@@ -217,6 +219,21 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 50
 text = "BUY - 100 Tickets"
 script = ExtResource("6_skkvx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1311, 577)
+zoom = Vector2(0.42, 0.42)
+
+[node name="TicketDisplay" type="Label" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -174.0
+offset_right = 330.0
+offset_bottom = -123.0
+theme_override_fonts/font = ExtResource("8_skkvx")
+theme_override_font_sizes/font_size = 150
+text = "tickets:0"
+script = ExtResource("9_eo1la")
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/Button" to="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer3/HBoxContainer/MarginContainer2/VBoxContainer/Button" to="PanelContainer3/HBoxContainer/MarginContainer2/VBoxContainer/Button" method="_on_pressed"]
