@@ -12,7 +12,7 @@ emission_energy_multiplier = 16.0
 size = Vector3(0.33706665, 0.5234375, 0.08154297)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p4ymo"]
-size = Vector3(0.3239746, 0.49169922, 0.42333984)
+size = Vector3(0.3239746, 0.5325928, 15.189493)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_6am2b"]
 viewport_path = NodePath("SubViewport")
@@ -28,19 +28,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00020885468, 0.0064203143,
 shape = SubResource("BoxShape3D_murp5")
 
 [node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_7hbks")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022094727, 0.015380859, 0.28833008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022094727, -0.005065918, 3.8381414)
 shape = SubResource("BoxShape3D_p4ymo")
-script = ExtResource("1_7hbks")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 
-[node name="InteractLabel" type="Label" parent="SubViewport"]
+[node name="Label" type="Label" parent="SubViewport"]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Press E to ESCAPE"
+text = " "
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8569905, -2.018005, 0.1608547)

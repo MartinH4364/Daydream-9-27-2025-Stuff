@@ -1,17 +1,18 @@
-var player_in_range = false
-@onready var interact_label: Label = %spedmonkey
+extends Area3D
 
+@onready var area_3d: Area3D = $"."
+@onready var label: Label = $"../SubViewport/Label"
 
-func _on_body_entered(body):
-	if body.name == "ProtoController":
-		player_in_range = true
-		interact_label.text = "press E to ESCAPE"   # show the label
+var playerInBody = false
 
-func _on_body_exited(body):
-	if body.name == "ProtoController":
-		player_in_range = false
-		interact_label.text = " "  # hide the label
+func _on_body_entered(_body):
+	$"../SubViewport/Label".text = "press E to ESCAPE"   # show the label
+	playerInBody = true
 
+func _on_body_exited(_body):
+	$"../SubViewport/Label".text = " "  # hide the label
+	playerInBody = false
+	
 func _process(delta: float) -> void:
-	if player_in_range and Input.is_action_just_pressed("interact"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if playerInBody and Input.is_action_just_pressed("interact"):
+		print("win")
