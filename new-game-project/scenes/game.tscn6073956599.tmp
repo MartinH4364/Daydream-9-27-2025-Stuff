@@ -295,13 +295,23 @@ _data = {
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
 script = ExtResource("1_gee14")
 
 [node name="Timer" type="Timer" parent="GameManager"]
 wait_time = 30.0
 
 [node name="SanityTimer" type="Timer" parent="GameManager"]
+
+[node name="SanityBar" type="ProgressBar" parent="GameManager"]
+offset_left = -95.0
+offset_top = 129.0
+offset_right = 165.0
+offset_bottom = 133.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_0tnpc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vtaks")
+value = 80.0
+show_percentage = false
+script = ExtResource("4_0tnpc")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(41, 65)
@@ -330,17 +340,6 @@ offset_bottom = -51.0
 theme_override_fonts/font = ExtResource("3_0tnpc")
 theme_override_font_sizes/font_size = 8
 text = "Time Left:"
-
-[node name="SanityBar" type="ProgressBar" parent="Player/Camera2D"]
-offset_left = -140.0
-offset_top = 69.0
-offset_right = 120.0
-offset_bottom = 73.0
-theme_override_styles/background = SubResource("StyleBoxEmpty_0tnpc")
-theme_override_styles/fill = SubResource("StyleBoxFlat_vtaks")
-value = 80.0
-show_percentage = false
-script = ExtResource("4_0tnpc")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)

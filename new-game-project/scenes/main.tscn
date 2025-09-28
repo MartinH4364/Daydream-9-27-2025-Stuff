@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg2mstkp5ori1"]
+[gd_scene load_steps=14 format=3 uid="uid://cg2mstkp5ori1"]
 
 [ext_resource type="PackedScene" uid="uid://yx3acwl1musb" path="res://scenes/carpet.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
@@ -8,12 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://bcd0c1rm2fbo5" path="res://scenes/Green.tscn" id="5_lquwl"]
 [ext_resource type="FontFile" uid="uid://crft7xjpq21ha" path="res://Morton Assets/fonts/PixelOperator8.ttf" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://ci3cbol0oy8hg" path="res://scripts/game_controller.gd" id="8_tipki"]
+[ext_resource type="Script" uid="uid://co3xt4kktqs1g" path="res://scripts/SanityBar.gd" id="9_85g3d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_choun"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ya4ey"]
+bg_color = Color(0.76992756, 0.76644665, 0.99129266, 1)
 
 [node name="Main" type="Node3D"]
 
@@ -170,3 +176,14 @@ text = "tickets:0"
 
 [node name="GameController" type="Node" parent="."]
 script = ExtResource("8_tipki")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 96.0
+offset_top = 590.0
+offset_right = 1056.0
+offset_bottom = 622.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_choun")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ya4ey")
+value = 80.0
+show_percentage = false
+script = ExtResource("9_85g3d")
