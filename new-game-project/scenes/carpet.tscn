@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://yx3acwl1musb"]
+
+[ext_resource type="PackedScene" uid="uid://cqrd116xlmouk" path="res://assets/actual red carpet.glb" id="1_ff73c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y22cx"]
+
+[node name="Carpet" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_ff73c")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.6, 0, 0, 0, 0.020000009, 0, 0, 0, 2.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_y22cx")

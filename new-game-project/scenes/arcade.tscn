@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgh0060o3t6nr"]
+
+[ext_resource type="PackedScene" uid="uid://rgmhg2o4aiyb" path="res://assets/arcade_machine.glb" id="1_pig0t"]
+[ext_resource type="Script" uid="uid://cbe07i0aev61w" path="res://scenes/area_3d.gd" id="2_me10n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_me10n"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24fbm"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r0kxb"]
+viewport_path = NodePath("Sketchfab_Scene/SubViewport")
+
+[node name="Arcade" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_pig0t")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, -0.77, 0)
+
+[node name="SubViewport" type="SubViewport" parent="Sketchfab_Scene"]
+transparent_bg = true
+
+[node name="InteractLabel" type="Label" parent="Sketchfab_Scene/SubViewport"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -23.0
+offset_right = 56.0
+grow_horizontal = 2
+grow_vertical = 0
+text = " "
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.4, 0, 0, 0, 2.1542401, 0, 0, 0, 2.8, 0, 1.8700001, 0)
+shape = SubResource("BoxShape3D_me10n")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_me10n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(4.6200004, 0, 0, 0, 9.727081, 0, 0, 0, 6.5519996, 0, 0, 0)
+shape = SubResource("BoxShape3D_24fbm")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 1)
+texture = SubResource("ViewportTexture_r0kxb")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
