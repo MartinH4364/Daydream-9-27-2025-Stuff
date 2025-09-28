@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg2mstkp5ori1"]
+[gd_scene load_steps=10 format=3 uid="uid://cg2mstkp5ori1"]
 
 [ext_resource type="PackedScene" uid="uid://yx3acwl1musb" path="res://scenes/carpet.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b83bcovwip0m5" path="res://scenes/red.tscn" id="4_1bvp3"]
 [ext_resource type="Script" path="res://scenes/arcade.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bcd0c1rm2fbo5" path="res://scenes/Green.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://c7o00vrtwtu4o" path="res://scenes/shops.tscn" id="7_o6xl0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 albedo_color = Color(0, 0, 0, 1)
@@ -156,3 +157,6 @@ transform = Transform3D(1.676847, 0, 0, 0, 9.875424, 0, 0, 0, 1.676847, -24.1772
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.981079, 17.76775, 1.5507202)
 size = Vector3(25.80249, 0.41845703, 32.6239)
 material = SubResource("StandardMaterial3D_lquwl")
+
+[node name="StaticBody3D" parent="." instance=ExtResource("7_o6xl0")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -4.657055, 0.7147046, 9.278023)

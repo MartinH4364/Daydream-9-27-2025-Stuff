@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7o00vrtwtu4o"]
+
+[ext_resource type="PackedScene" uid="uid://dcjjod56bmure" path="res://Enming Assets/lowpoly_store.glb" id="1_nxtmw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uw02w"]
+size = Vector3(2.4975586, 1.2739258, 2.3565063)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogymk"]
+size = Vector3(2.4699707, 1.8056641, 2.1403809)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_nxtmw")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7487793, 0.7740663, -0.11465454)
+shape = SubResource("BoxShape3D_uw02w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9646988, 0.40283203, -2.9474516)
+shape = SubResource("BoxShape3D_ogymk")
