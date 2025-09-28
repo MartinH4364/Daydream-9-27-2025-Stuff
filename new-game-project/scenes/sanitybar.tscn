@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcgg413eg0k0a"]
+
+[ext_resource type="Script" uid="uid://dr3bbh8tnvqj4" path="res://scripts/SanityHandler.gd" id="1_50ol8"]
+
+[node name="Sanitybar" type="ProgressBar"]
+offset_right = 240.0
+offset_bottom = 8.0
+max_value = 1000.0
+value = 80.0
+show_percentage = false
+script = ExtResource("1_50ol8")
+
+[node name="SanityTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SanityTimer" to="." method="_on_sanity_timer_timeout"]

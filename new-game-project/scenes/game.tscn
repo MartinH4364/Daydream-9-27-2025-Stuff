@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://yicge48108e0"]
+[gd_scene load_steps=22 format=3 uid="uid://yicge48108e0"]
 
 [ext_resource type="Script" uid="uid://dduao2i1ksk3" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://coty777eo73yr" path="res://scenes/slime.tscn" id="2_p57ef"]
 [ext_resource type="FontFile" uid="uid://dj0giqk7mfwmq" path="res://Morton Assets/fonts/PixelOperator8-Bold.ttf" id="3_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cgqpg3bl07ghk" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://co3xt4kktqs1g" path="res://scripts/SanityBar.gd" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://r6of2uoy1a3m" path="res://scenes/Coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://quvl47okd1e" path="res://scenes/killzone.tscn" id="5_iywne"]
 
@@ -322,6 +323,11 @@ offset_bottom = -51.0
 theme_override_fonts/font = ExtResource("3_0tnpc")
 theme_override_font_sizes/font_size = 8
 text = "Time Left:"
+
+[node name="SanityBar" type="ProgressBar" parent="Player/Camera2D"]
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("4_0tnpc")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
