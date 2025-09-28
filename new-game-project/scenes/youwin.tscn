@@ -1,19 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://hn7ivrah6pvw"]
+[gd_scene load_steps=3 format=3 uid="uid://hn7ivrah6pvw"]
 
 [ext_resource type="Texture2D" uid="uid://bkyqsawj2e7rr" path="res://Enming Assets/download.jpeg" id="1_p8sko"]
+[ext_resource type="Texture2D" uid="uid://dj4cx83eerm0s" path="res://Enming Assets/trophy-removebg-preview.png" id="2_hnagg"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 233.0
-offset_top = -17.0
-offset_right = 1243.0
-offset_bottom = 260.0
-theme_override_font_sizes/font_size = 90
-text = "Good Job
+offset_left = 213.0
+offset_top = -12.0
+offset_right = 1279.0
+offset_bottom = 265.0
+theme_override_font_sizes/font_size = 50
+text = "Good Job 
 A winner is you!"
 
 [node name="Download" type="Sprite2D" parent="."]
-position = Vector2(571, 436)
-scale = Vector2(4.898889, 1.7844445)
+position = Vector2(369.43747, 303.125)
+scale = Vector2(3.1072223, 1.5811111)
 texture = ExtResource("1_p8sko")
+
+[node name="TrophyRemovebgPreview" type="Sprite2D" parent="."]
+position = Vector2(897, 279)
+texture = ExtResource("2_hnagg")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 527.0
+offset_right = 1347.0
+offset_bottom = 596.0
+theme_override_font_sizes/font_size = 40
+text = "But do you have the SANITY to find the secret ending?"
