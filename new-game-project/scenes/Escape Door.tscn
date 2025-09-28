@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://c118s5laynw1r"]
+
+[ext_resource type="Script" uid="uid://dpc4a3pvslyeq" path="res://scenes/escapedoor.gd" id="1_7hbks"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_murp5"]
+albedo_color = Color(1, 0.91764706, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.91764706, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_murp5"]
+size = Vector3(0.33706665, 0.5234375, 0.08154297)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p4ymo"]
+size = Vector3(0.3239746, 0.32495117, 0.42333984)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6am2b"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.32760614, 0, 0, 0, 0.48454994, 0, 0, 0, 0.043081343, 0, 0, 0)
+material = SubResource("StandardMaterial3D_murp5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00020885468, 0.0064203143, 0.0045849085)
+shape = SubResource("BoxShape3D_murp5")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_7hbks")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022094727, 0.09875488, 0.28833008)
+shape = SubResource("BoxShape3D_p4ymo")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = " "
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8569905, -2.018005, 0.1608547)
+texture = SubResource("ViewportTexture_6am2b")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
