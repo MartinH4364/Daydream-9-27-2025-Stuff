@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Global="*res://scripts/Global.gd"
 Sanity="*res://scripts/Sanity.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 ui_left={
