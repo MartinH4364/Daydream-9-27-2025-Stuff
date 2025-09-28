@@ -4,4 +4,8 @@ var tickets = 0
 var timerTime = 40
 
 var sanity = 180
-var sanityLoss = 0.5
+var sanityLoss = 0.1
+
+func _process(delta: float) -> void:
+	if sanity < 0:
+		get_tree().change_scene_to_file("res://scenes/Youlose.tscn")
