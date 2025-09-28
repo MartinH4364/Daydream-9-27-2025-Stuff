@@ -15,4 +15,5 @@ func _on_body_exited(_body):
 	
 func _process(delta: float) -> void:
 	if playerInBody and Input.is_action_just_pressed("interact"):
-		print("win")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file("res://scenes/Secretending.tscn")
