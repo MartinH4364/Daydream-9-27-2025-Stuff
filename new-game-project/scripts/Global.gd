@@ -4,7 +4,7 @@ var tickets = 0
 var timerTime = 40
 
 var maxSanity = 360
-var sanity = 400
+var sanity = 180
 var sanityLoss = 1
 var FogAdd = 0.7
 var coffeeAmount = 0
