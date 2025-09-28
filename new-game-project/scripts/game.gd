@@ -22,11 +22,11 @@ func _process(delta: float) -> void:
 	sanity_bar.value = Global.sanity
 
 func add_point():
-		score += 1
+		score += 1 * Global.coinMultiplier
 		label.text = str(score)
 		
 func _on_timer_timeout() -> void:
-	Global.tickets += game_manager.score
+	Global.tickets += round(game_manager.score)
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	
 func _on_sanity_timer_timeout() -> void:
