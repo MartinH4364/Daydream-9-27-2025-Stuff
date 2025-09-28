@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg2mstkp5ori1"]
+[gd_scene load_steps=16 format=3 uid="uid://cg2mstkp5ori1"]
 
 [ext_resource type="PackedScene" uid="uid://yx3acwl1musb" path="res://scenes/carpet.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cgh0060o3t6nr" path="res://scenes/arcade.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b83bcovwip0m5" path="res://scenes/red.tscn" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://cdmh1k5v7mi56" path="res://scenes/arcade.gd" id="4_7mycd"]
+[ext_resource type="Script" path="res://scenes/arcade.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bcd0c1rm2fbo5" path="res://scenes/Green.tscn" id="5_lquwl"]
 [ext_resource type="FontFile" uid="uid://crft7xjpq21ha" path="res://Morton Assets/fonts/PixelOperator8.ttf" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://ci3cbol0oy8hg" path="res://scripts/game_controller.gd" id="8_tipki"]
 [ext_resource type="Script" uid="uid://co3xt4kktqs1g" path="res://scripts/SanityBar.gd" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://c7o00vrtwtu4o" path="res://scenes/shops.tscn" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://cpxkby26d5v3u" path="res://scenes/theotherescapedoor.tscn" id="11_ya4ey"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 albedo_color = Color(0, 0, 0, 1)
@@ -31,7 +32,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
 [node name="Carpet" parent="." instance=ExtResource("1_h2yge")]
-transform = Transform3D(19.993248, 0, 0, 0, 19.993248, 0, 0, 0, 19.993248, -0.82391626, 0.5398314, 0.039405107)
+transform = Transform3D(19.993248, 0, 0, 0, 19.993248, 0, 0, 0, 19.993248, -0.84032995, 0.51703, 0.04185605)
 
 [node name="ProtoController" parent="." instance=ExtResource("1_ig7tw")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 5.475186, -13.110279)
@@ -191,3 +192,6 @@ script = ExtResource("9_85g3d")
 
 [node name="StaticBody3D" parent="." instance=ExtResource("10_choun")]
 transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -6.8119507, 0.7147046, 9.941973)
+
+[node name="Node3D" parent="." instance=ExtResource("11_ya4ey")]
+transform = Transform3D(6.892484, 0, 0, 0, 5.941341, 0, 0, 0, 1.9501415, -20.314499, 2.3298197, -14.376002)

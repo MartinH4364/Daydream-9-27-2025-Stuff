@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpxkby26d5v3u"]
+
+[ext_resource type="Script" uid="uid://cexo38lrybsh" path="res://firstescapedoor.gd" id="1_ysl3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8dn6n"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3dnah"]
+size = Vector3(0.33099365, 1, 1.3251343)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tau0o"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007965565, -0.005928248, -0.005576372)
+use_collision = true
+size = Vector3(0.27648926, 0.5908203, 0.030975342)
+material = SubResource("StandardMaterial3D_8dn6n")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_ysl3m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004593998, 0, 0.0062561035)
+shape = SubResource("BoxShape3D_3dnah")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = " "
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9977715, -1.9819645, 0)
+texture = SubResource("ViewportTexture_tau0o")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
