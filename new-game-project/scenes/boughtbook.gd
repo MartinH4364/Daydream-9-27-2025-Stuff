@@ -1,6 +1,6 @@
 extends Button
 
 func _on_pressed() -> void:
-	if Global.tickets >= 50:
-		Global.tickets -= 50
+	if Global.tickets >= 30:
+		Global.tickets -= 30
 		Global.sanity += 100
