@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cymmkeeqforvm"]
+[gd_scene load_steps=12 format=3 uid="uid://cymmkeeqforvm"]
 
 [ext_resource type="Texture2D" uid="uid://6loy4brnqboo" path="res://Enming Assets/pixel-art-illustration-mug-coffee-600nw-2395135921-removebg-preview.png" id="1_ec5oe"]
-[ext_resource type="Script" path="res://scenes/buycoffee.gd" id="2_t4md6"]
+[ext_resource type="Script" uid="uid://dfmfr8aeygb8m" path="res://scenes/buycoffee.gd" id="2_t4md6"]
 [ext_resource type="Texture2D" uid="uid://btl3aq02yhjy6" path="res://Enming Assets/book-Photoroom.png" id="3_fpbbi"]
-[ext_resource type="Script" path="res://scenes/boughtbook.gd" id="4_m0qts"]
+[ext_resource type="Script" uid="uid://ca1n1iaodoyty" path="res://scenes/boughtbook.gd" id="4_m0qts"]
 [ext_resource type="Texture2D" uid="uid://da8cb0b2f3xbh" path="res://Enming Assets/mushroom-removebg-preview.png" id="5_ht580"]
 [ext_resource type="Texture2D" uid="uid://dj4cx83eerm0s" path="res://Enming Assets/trophy-removebg-preview.png" id="5_m0qts"]
-[ext_resource type="Script" path="res://scenes/buymushroom.gd" id="6_skkvx"]
+[ext_resource type="Script" uid="uid://2l2hg7d8djew" path="res://scenes/buymushroom.gd" id="6_skkvx"]
 [ext_resource type="FontFile" uid="uid://crft7xjpq21ha" path="res://Morton Assets/fonts/PixelOperator8.ttf" id="8_skkvx"]
 [ext_resource type="Script" uid="uid://dxm0dihwj8wsj" path="res://scripts/ticket_display.gd" id="9_eo1la"]
+[ext_resource type="Script" uid="uid://drnheo3w0kq8d" path="res://scenes/exitshop.gd" id="10_eo1la"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cimqq"]
 bg_color = Color(1, 0.8784314, 1, 0.827451)
@@ -235,7 +236,18 @@ theme_override_font_sizes/font_size = 150
 text = "tickets:0"
 script = ExtResource("9_eo1la")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2119.0
+offset_top = -173.0
+offset_right = 2573.0
+offset_bottom = -28.0
+theme_override_font_sizes/font_size = 100
+text = "Exit Shop"
+script = ExtResource("10_eo1la")
+
 [connection signal="pressed" from="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/Button" to="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer3/HBoxContainer/MarginContainer2/VBoxContainer/Button" to="PanelContainer3/HBoxContainer/MarginContainer2/VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer4/HBoxContainer/MarginContainer2/VBoxContainer/Button" to="PanelContainer4/HBoxContainer/MarginContainer2/VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer2/HBoxContainer/MarginContainer2/VBoxContainer/Button" to="PanelContainer2/HBoxContainer/MarginContainer2/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

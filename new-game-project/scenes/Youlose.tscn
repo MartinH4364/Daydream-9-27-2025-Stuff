@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1e8uq1u24g2x"]
+[gd_scene load_steps=3 format=3 uid="uid://c1e8uq1u24g2x"]
 
 [ext_resource type="VideoStream" uid="uid://dxchh6ofiyueo" path="res://Release Da BAbY.ogv" id="1_kkvll"]
+[ext_resource type="Texture2D" uid="uid://fxp2ep3kdgxp" path="res://Enming Assets/youlose.webp" id="2_ssc32"]
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.9, 0.9)
@@ -24,3 +25,9 @@ offset_bottom = 114.0
 theme_override_font_sizes/font_size = 96
 text = "You Lose
 You went insane :("
+
+[node name="Youlose" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(2.499939, -0.25)
+scale = Vector2(1.9984373, 0.7580645)
+texture = ExtResource("2_ssc32")
