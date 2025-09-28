@@ -1,22 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7o00vrtwtu4o"]
+[gd_scene load_steps=7 format=3 uid="uid://c7o00vrtwtu4o"]
 
 [ext_resource type="PackedScene" uid="uid://dcjjod56bmure" path="res://Enming Assets/lowpoly_store.glb" id="1_nxtmw"]
+[ext_resource type="Script" uid="uid://d21nb7i2ftxpm" path="res://scenes/bookshop.gd" id="2_uw02w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uw02w"]
 size = Vector3(2.4975586, 1.2739258, 2.3565063)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ogymk"]
-size = Vector3(2.4699707, 1.8056641, 2.1403809)
+size = Vector3(2.177185, 1.8056641, 2.156189)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxtmw"]
+size = Vector3(5.752838, 1.8242188, 6.5289917)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ogymk"]
+viewport_path = NodePath("Sketchfab_Scene/SubViewport")
 
 [node name="StaticBody3D" type="StaticBody3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_nxtmw")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
+[node name="SubViewport" type="SubViewport" parent="Sketchfab_Scene"]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Sketchfab_Scene/SubViewport"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -23.0
+offset_right = 103.0
+grow_horizontal = 2
+grow_vertical = 0
+text = " "
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7487793, 0.7740663, -0.11465454)
 shape = SubResource("BoxShape3D_uw02w")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9646988, 0.40283203, -2.9474516)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1110916, 0.40283203, -2.9553556)
 shape = SubResource("BoxShape3D_ogymk")
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_uw02w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07133484, 0.41210938, -1.2417908)
+shape = SubResource("BoxShape3D_nxtmw")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.93160796, 3.0005245, -1.5329978)
+texture = SubResource("ViewportTexture_ogymk")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
