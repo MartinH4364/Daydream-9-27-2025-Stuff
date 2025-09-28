@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1e8uq1u24g2x"]
+
+[ext_resource type="VideoStream" uid="uid://dxchh6ofiyueo" path="res://Release Da BAbY.ogv" id="1_kkvll"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.9, 0.9)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -652.0
+offset_top = -295.0
+offset_right = 628.0
+offset_bottom = 297.0
+stream = ExtResource("1_kkvll")
+autoplay = true
+loop = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -435.0
+offset_top = -153.0
+offset_right = 411.0
+offset_bottom = 114.0
+theme_override_font_sizes/font_size = 96
+text = "You Lose
+You went insane :("

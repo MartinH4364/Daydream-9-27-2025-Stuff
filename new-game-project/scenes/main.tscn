@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://cg2mstkp5ori1"]
+[gd_scene load_steps=12 format=3 uid="uid://cg2mstkp5ori1"]
 
 [ext_resource type="PackedScene" uid="uid://yx3acwl1musb" path="res://scenes/carpet.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cgh0060o3t6nr" path="res://scenes/arcade.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b83bcovwip0m5" path="res://scenes/red.tscn" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://cdmh1k5v7mi56" path="res://scenes/arcade.gd" id="4_7mycd"]
+[ext_resource type="Script" path="res://scenes/arcade.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bcd0c1rm2fbo5" path="res://scenes/Green.tscn" id="5_lquwl"]
 [ext_resource type="FontFile" uid="uid://crft7xjpq21ha" path="res://Morton Assets/fonts/PixelOperator8.ttf" id="7_o6xl0"]
-[ext_resource type="Script" uid="uid://ci3cbol0oy8hg" path="res://scripts/game_controller.gd" id="8_tipki"]
+[ext_resource type="Script" path="res://scripts/game_controller.gd" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://c7o00vrtwtu4o" path="res://scenes/shops.tscn" id="9_85g3d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 albedo_color = Color(0, 0, 0, 1)
@@ -18,16 +19,16 @@ albedo_color = Color(0, 0, 0, 1)
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.9607792, -0.26313713, 0.08753408, 0, 0.31564906, 0.948876, -0.27731454, 0.9116603, -0.30326906, -12.162631, 0, -3.5105617)
+transform = Transform3D(-0.9607792, -0.26313713, 0.08753408, 0, 0.31564906, 0.948876, -0.27731454, 0.9116603, -0.30326906, -12.162631, 3.352789, 4.4096956)
 light_energy = 0.5
 shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
 [node name="Carpet" parent="." instance=ExtResource("1_h2yge")]
-transform = Transform3D(19.993248, 0, 0, 0, 19.993248, 0, 0, 0, 19.993248, -0.8, 0.51, 0)
+transform = Transform3D(19.993248, 0, 0, 0, 19.993248, 0, 0, 0, 19.993248, -0.8190754, 0.51000094, 0.023256302)
 
 [node name="ProtoController" parent="." instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.570367, 3.0723143, -1)
 
 [node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 1.5)
@@ -170,3 +171,6 @@ text = "tickets:0"
 
 [node name="GameController" type="Node" parent="."]
 script = ExtResource("8_tipki")
+
+[node name="StaticBody3D" parent="." instance=ExtResource("9_85g3d")]
+transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, -6.3094435, 0.7147065, 8.984114)
