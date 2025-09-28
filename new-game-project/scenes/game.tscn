@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://yicge48108e0"]
+[gd_scene load_steps=25 format=3 uid="uid://yicge48108e0"]
 
 [ext_resource type="Script" uid="uid://dduao2i1ksk3" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://co3xt4kktqs1g" path="res://scripts/SanityBar.gd" id="4_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://r6of2uoy1a3m" path="res://scenes/Coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://quvl47okd1e" path="res://scenes/killzone.tscn" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://wlj8kwpnqhs6" path="res://Morton Assets/Untitled4_20250928105420.png" id="5_vtaks"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tnpc"]
 
@@ -332,6 +333,7 @@ theme_override_font_sizes/font_size = 8
 text = "Time Left:"
 
 [node name="SanityBar" type="ProgressBar" parent="Player/Camera2D"]
+z_index = 100
 offset_left = -140.0
 offset_top = 69.0
 offset_right = 120.0
@@ -341,6 +343,15 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vtaks")
 value = 80.0
 show_percentage = false
 script = ExtResource("4_0tnpc")
+
+[node name="Fog" type="TextureRect" parent="Player/Camera2D"]
+modulate = Color(1, 1, 1, 0.7764706)
+offset_left = -147.0
+offset_top = -85.0
+offset_right = 1853.0
+offset_bottom = 1915.0
+scale = Vector2(0.14711292, 0.08534456)
+texture = ExtResource("5_vtaks")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
@@ -487,6 +498,15 @@ position = Vector2(-30, -583)
 
 [node name="Slime5" parent="Slimes" instance=ExtResource("2_p57ef")]
 position = Vector2(-59, -584)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = 524.0
+offset_top = 315.0
+offset_right = 564.0
+offset_bottom = 355.0
+scale = Vector2(-20.888977, -59.824406)
+color = Color(0.06, 0.06, 0.06, 1)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="GameManager/SanityTimer" to="GameManager" method="_on_sanity_timer_timeout"]
