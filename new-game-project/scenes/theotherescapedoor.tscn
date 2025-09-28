@@ -22,11 +22,17 @@ size = Vector3(0.27648926, 0.5908203, 0.030975342)
 material = SubResource("StandardMaterial3D_8dn6n")
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(3.0260446, 0, 0, 0, 1, 0, 0, 0, 4.369858, 0, 0, 0)
 script = ExtResource("1_ysl3m")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004593998, 0, 0.0062561035)
 shape = SubResource("BoxShape3D_3dnah")
+debug_color = Color(3.7541986e-06, 0.5972483, 0.7174794, 0.41960785)
+
+[node name="Timer" type="Timer" parent="Area3D"]
+wait_time = 5.0
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
@@ -42,3 +48,4 @@ texture = SubResource("ViewportTexture_tau0o")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
+[connection signal="timeout" from="Area3D/Timer" to="Area3D" method="_on_timer_timeout"]

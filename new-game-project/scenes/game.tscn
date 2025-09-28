@@ -353,6 +353,15 @@ scale = Vector2(0.14711292, 0.08534456)
 texture = ExtResource("5_vtaks")
 script = ExtResource("6_kvpfn")
 
+[node name="Label2" type="Label" parent="Player/Camera2D"]
+offset_left = -140.0
+offset_top = 59.0
+offset_right = -95.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("3_0tnpc")
+theme_override_font_sizes/font_size = 8
+text = "Sanity"
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(0.90490377, 0.9664567)
 tile_set = SubResource("TileSet_lnu2h")
