@@ -10,5 +10,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.sanity >= 360:
+	if Global.sanity >= 1000:
 		node_3d.visible = true

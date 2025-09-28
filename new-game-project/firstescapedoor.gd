@@ -8,7 +8,7 @@ var playerInBody = false
 var timerout = false
 
 func _process(delta: float) -> void:
-	if playerInBody and Input.is_action_just_pressed("interact") and Global.sanity >= 360:
+	if playerInBody and Input.is_action_just_pressed("interact") and Global.sanity >= 1000:
 		get_tree().change_scene_to_file("res://scenes/Secret.tscn")
 
 func _on_body_entered(body: Node3D) -> void:
