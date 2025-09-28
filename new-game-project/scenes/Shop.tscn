@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cymmkeeqforvm"]
+[gd_scene load_steps=9 format=3 uid="uid://cymmkeeqforvm"]
 
 [ext_resource type="Texture2D" uid="uid://6loy4brnqboo" path="res://Enming Assets/pixel-art-illustration-mug-coffee-600nw-2395135921-removebg-preview.png" id="1_ec5oe"]
 [ext_resource type="Script" uid="uid://dfmfr8aeygb8m" path="res://scenes/buycoffee.gd" id="2_t4md6"]
 [ext_resource type="Texture2D" uid="uid://btl3aq02yhjy6" path="res://Enming Assets/book-Photoroom.png" id="3_fpbbi"]
 [ext_resource type="Script" uid="uid://ca1n1iaodoyty" path="res://scenes/boughtbook.gd" id="4_m0qts"]
 [ext_resource type="Texture2D" uid="uid://da8cb0b2f3xbh" path="res://Enming Assets/mushroom-removebg-preview.png" id="5_ht580"]
+[ext_resource type="Texture2D" uid="uid://dj4cx83eerm0s" path="res://Enming Assets/trophy-removebg-preview.png" id="5_m0qts"]
 [ext_resource type="Script" uid="uid://2l2hg7d8djew" path="res://scenes/buymushroom.gd" id="6_skkvx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cimqq"]
@@ -21,7 +22,7 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 912.0
+offset_right = 1050.0
 offset_bottom = 500.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cimqq")
 
@@ -53,7 +54,8 @@ text = "Coffee"
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Sacrifices Vision for Sanity"
+text = "Sacrifices Vision for Time
+"
 autowrap_mode = 3
 
 [node name="Control" type="Control" parent="PanelContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
@@ -118,7 +120,7 @@ script = ExtResource("4_m0qts")
 
 [node name="PanelContainer4" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 1409.0
+offset_left = 1270.0
 offset_top = 625.0
 offset_right = 2585.0
 offset_bottom = 1251.0
@@ -133,7 +135,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer4/HBoxContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("3_fpbbi")
+texture = ExtResource("5_m0qts")
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer4/HBoxContainer"]
 layout_mode = 2
@@ -146,13 +148,13 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.41568628, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
-text = "Dog Man"
+text = "Trophy"
 
 [node name="Label2" type="Label" parent="PanelContainer4/HBoxContainer/MarginContainer2/VBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "+50 Sanity"
+text = "What you came for"
 autowrap_mode = 3
 
 [node name="Control" type="Control" parent="PanelContainer4/HBoxContainer/MarginContainer2/VBoxContainer"]
@@ -163,7 +165,7 @@ custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 50
-text = "BUY - 50 Tickets"
+text = "BUY - 1000 Tickets"
 script = ExtResource("4_m0qts")
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
