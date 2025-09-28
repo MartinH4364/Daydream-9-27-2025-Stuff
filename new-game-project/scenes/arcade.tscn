@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgh0060o3t6nr"]
 
-[ext_resource type="PackedScene" uid="uid://rgmhg2o4aiyb" path="res://assets/arcade_machine.glb" id="1_pig0t"]
+[ext_resource type="PackedScene" uid="uid://rgmhg2o4aiyb" path="res://Enming Assets/arcade_machine.glb" id="1_pig0t"]
 [ext_resource type="Script" uid="uid://cbe07i0aev61w" path="res://scenes/area_3d.gd" id="2_me10n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_me10n"]

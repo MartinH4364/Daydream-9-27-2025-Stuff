@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://cgh0060o3t6nr" path="res://scenes/arcade.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b83bcovwip0m5" path="res://scenes/red.tscn" id="4_1bvp3"]
-[ext_resource type="Script" path="res://scenes/arcade.gd" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://cdmh1k5v7mi56" path="res://scenes/arcade.gd" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bcd0c1rm2fbo5" path="res://scenes/Green.tscn" id="5_lquwl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
