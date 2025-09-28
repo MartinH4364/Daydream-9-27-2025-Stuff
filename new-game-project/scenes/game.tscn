@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://yicge48108e0"]
+[gd_scene load_steps=26 format=3 uid="uid://yicge48108e0"]
 
 [ext_resource type="Script" uid="uid://dduao2i1ksk3" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://r6of2uoy1a3m" path="res://scenes/Coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://quvl47okd1e" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://wlj8kwpnqhs6" path="res://Morton Assets/Untitled4_20250928105420.png" id="5_vtaks"]
+[ext_resource type="Script" uid="uid://dau4u7iqxlb3a" path="res://scripts/UpdateFog.gd" id="6_kvpfn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tnpc"]
 
@@ -345,13 +346,13 @@ show_percentage = false
 script = ExtResource("4_0tnpc")
 
 [node name="Fog" type="TextureRect" parent="Player/Camera2D"]
-modulate = Color(1, 1, 1, 0.7764706)
 offset_left = -147.0
 offset_top = -85.0
 offset_right = 1853.0
 offset_bottom = 1915.0
 scale = Vector2(0.14711292, 0.08534456)
 texture = ExtResource("5_vtaks")
+script = ExtResource("6_kvpfn")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
