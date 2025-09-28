@@ -1,4 +1,6 @@
 extends Button
 
 func _on_pressed() -> void:
-	print("bought coffee")
+	if Global.tickets >= 20:
+		Global.tickets -= 20
+		Global.coffeeAmount += 1
