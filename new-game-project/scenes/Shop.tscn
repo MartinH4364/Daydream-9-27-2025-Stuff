@@ -108,7 +108,7 @@ text = "Dog Man"
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "+50 Sanity"
+text = "+100 Sanity"
 autowrap_mode = 3
 
 [node name="Control" type="Control" parent="PanelContainer3/HBoxContainer/MarginContainer2/VBoxContainer"]
@@ -119,7 +119,7 @@ custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 50
-text = "BUY - 30 Tickets"
+text = "BUY - 50 Tickets"
 script = ExtResource("4_m0qts")
 
 [node name="PanelContainer4" type="PanelContainer" parent="."]
